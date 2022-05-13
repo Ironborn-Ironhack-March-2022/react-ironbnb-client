@@ -1,6 +1,7 @@
 .NavBar {
-    background-color: rgb(176, 204, 240);
+    background-color: #e51e5334;
     padding: 1rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem 0rem #aaa;
 }
 .NavBar a {
     color: #111;
@@ -11,5 +12,6 @@
     border-radius: 0.5rem;
 }
 .NavBar a.active {
-    background-color: rgb(127, 169, 224);
+    color: white;
+    background-color: #e51e52;
 }

@@ -20,7 +20,7 @@ function CreateApartment() {
             pricePerDay
         }
 
-        axios.post("https://ironbnb-m3.herokuapp.com/apartments", details)
+        axios.post(process.env.REACT_APP_API_URL + "/apartments", details)
             .then( response => {
                 console.log(response.data)
 

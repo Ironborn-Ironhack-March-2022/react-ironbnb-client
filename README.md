@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# IronMaidensBnb: React codealong
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Codealong to practice React (React Router, useEffect, APIs, etc)
 
-In the project directory, you can run:
+- Goal (wireframes): https://whimsical.com/ironmaidensbnb-MVw1gkTJrekF2QTaEKCMJU
 
-### `npm start`
+- For that, we will use IronBnB API: https://ironbnb-m3.herokuapp.com
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## To-Do List
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] General structure and routing
+- [x] Functionality to display list of apartments from the API
+- [ ] Functionality to display details for each apartment
+- [x] Functionality to create new apartments
+- [ ] Further improvements
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Step 1: structure, NavBar, HomePage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+<NavBar />
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+path="/"
+  <HomePage />
+```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Step 2: ApartmentsList
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+path="/apartments"
+  <ApartmentsList />
+  --> call API (GET /apartments )
+  --> display links for each apartment
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Step 3: ApartmentDetails
+```
+path="/apartments/42"
+  <ApartmentDetails />
+  --> call API   (GET /apartments/42 )
+  --> display aparment details
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Step 4: Create new Apartment
+```
+path="/apartments/create"
+  <CreateApartment />
+  --> form (controlled component)
+  --> call API   (POST /apartments + body)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Improvements
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [x] Store API baseUrl in .env
+- [ ] Single API call to get the info (Instead of calling the API in `<ApartmentsList>` and `<ApartmentDetails>`)
+  - Make one single call to the API in `<App>`
+  - Pass the info as props to `<ApartmentsList>` and `<ApartmentDetails>`
+- [ ] Conditional rendering: if an apartment has no image, display a default image
+- [ ] Conditional rendering: if data from the API is not ready, display a message "loading"
+- [ ] Display spinner/loader while data is loading
+- [ ] Apply different ways to add style in React (inline styles, plain css with one file per component, scss...)
+- [ ] (advanced) create a service (a function or class in charge of all requests to the api; we did that in m2 at some point)
+- [ ] (advanced) Convert all function components to class components
+  (note: syntax to do props, state and api requests are a bit different in class components)

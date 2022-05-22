@@ -3,7 +3,7 @@
 
 Codealong to practice React (React Router, useEffect, APIs, etc)
 
-- Goal (wireframes): [https://whimsical.com/ironmaidensbnb-MVw1gkTJrekF2QTaEKCMJU](https://whimsical.com/ironmaidensbnb-MVw1gkTJrekF2QTaEKCMJU)
+- Goal (wireframes): [https://whimsical.com/react-ironbnb-MVw1gkTJrekF2QTaEKCMJU](https://whimsical.com/react-ironbnb-MVw1gkTJrekF2QTaEKCMJU)
 
 - Backend API (IronBnB API): [https://ironbnb-m3.herokuapp.com](https://ironbnb-m3.herokuapp.com)
 

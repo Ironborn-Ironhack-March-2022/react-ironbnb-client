@@ -7,7 +7,7 @@ Codealong to practice React (React Router, useEffect, APIs, etc)
 
 - Backend API (IronBnB API): [https://ironbnb-m3.herokuapp.com](https://ironbnb-m3.herokuapp.com)
 
-- Demo: [https://react-ironbnb.netlify.app/](https://react-ironbnb.netlify.app/)
+- Demo: [https://react-ironbnb-client.netlify.app/](https://react-ironbnb-client.netlify.app/)
 
 
 
